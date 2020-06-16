@@ -6,6 +6,4 @@ My name is Jose and Today we are going to use MetaCall to add a newsletter to a 
 
 So, Let's jump right into it...
 
-[Watch the video](todo)
-
-
+[![How to create a Newsletter self-contained solution with MetaCall & DynamoDB](https://img.youtube.com/vi/yo3eJmje_A8/0.jpg)](https://www.youtube.com/watch?v=yo3eJmje_A8)
