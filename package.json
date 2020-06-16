@@ -1,0 +1,36 @@
+{
+  "name": "mailchimp-example",
+  "version": "1.0.0",
+  "description": "A Mailchimp list subscriber endpoint written in node and how to deploy yours in MetaCall.",
+  "main": "mailchimp.js",
+  "dependencies": {
+    "aws-sdk": "^2.695.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metacall/mailchimp-example.git"
+  },
+  "keywords": [
+    "metacall",
+    "faas",
+    "mailchimp",
+    "subscription",
+    "email",
+    "function",
+    "await",
+    "fastdev"
+  ],
+  "author": "Jose Antonio Dominguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/metacall/mailchimp-example/issues"
+  },
+  "homepage": "https://github.com/metacall/mailchimp-example#readme"
+}

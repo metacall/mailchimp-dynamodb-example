@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Static Newsletter</title>
+    <style>
+      @import url(./tailwind.min.css);
+
+      html,
+      body {
+        font-family: "Montserrat", sans-serif;
+      }
+    </style>
+    <script>
+      window.onload = () => {
+        const baseUrl = window.location.href
+          .split("/")
+          .slice(0, -1)
+          .join("/")
+          .replace("static", "await");
+
+        document.getElementById("submit").addEventListener("click", (e) => {
+          e.preventDefault();
+
+          const message = document.getElementById("message");
+
+          message.classList.remove("hidden");
+
+          const email = document.getElementById("email").value;
+
+          if (email) {
+            fetch(`${baseUrl}/subscribe`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                email,
+                status: "subscribed",
+              }),
+            })
+              .then((res) => res.json())
+              .then(({ status, email_address }) => {
+                message.innerHTML = `Email ${email_address} is ${status}!`;
+              });
+          }
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <div class="w-full p-6">
+      <div class="bg-white p-6 w-50 border-solid border-2 border-gray-900">
+        <h1 class="text-xl pb-2 font-bold">Your Newsletter</h1>
+        <p class="pb-2 text-lg text-gray-700 hidden" id="message">
+          Subscribing...
+        </p>
+        <form class="flex">
+          <input
+            placeholder="Enter email"
+            id="email"
+            type="email"
+            class="appearance-none border-2 border-gray-900 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+          />
+          <button
+            type="submit"
+            id="submit"
+            class="bg-gray-900 text-white text-center items-center flex justify-center px-4"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
