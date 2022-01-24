@@ -4,7 +4,7 @@
   "description": "A Mailchimp list subscriber endpoint written in node and how to deploy yours in MetaCall.",
   "main": "mailchimp.js",
   "dependencies": {
-    "aws-sdk": "^2.695.0",
+    "aws-sdk": "^2.814.0",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "node-fetch": "^2.6.1"
